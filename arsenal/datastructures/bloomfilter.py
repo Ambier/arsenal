@@ -11,12 +11,7 @@ from hashlib import sha1
 
 def nbits_required(n):
     """ Calculate the number of bits required to represent any integer in [0, n). """
-    n -= 1
-    rv = 0
-    while n:
-        n >>= 1
-        rv += 1
-    return rv
+   return len(str(bin(n)))-2
 
 class Bloom:
     """ Bloom filter: compact hash table for membership tests with false pos. """
